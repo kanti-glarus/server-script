@@ -45,3 +45,5 @@ Mit der IP-Adresse vom `Raspberry Pi` kann von Geräten aus dem gleichen Netzwer
     http://192.168.1.xx:8080/data
 
 Die Ausgabe im Browser müsste nun entweder ein Bild oder Daten im JSON-Format sein.
+
+[Schritt 4: GET & POST](schritt-4.md)
