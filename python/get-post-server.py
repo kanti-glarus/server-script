@@ -31,7 +31,7 @@ class EinfacherServer(BaseHTTPRequestHandler):
 
         if path == '/post':
             parameters = self.post_parameters()
-            name = parameters.getvalue('name')
+            name = parameters.getvalue('username')
             title = 'POST: hello ' + str(name)
 
         self.send_response(200)
@@ -50,6 +50,16 @@ class EinfacherServer(BaseHTTPRequestHandler):
             parameters = self.get_parameters()
             name = parameters['name']
             title = 'GET: hello ' + name
+
+        if path == '/form':
+            self.send_response(200)
+            self.send_header('Content-type', 'text/html')
+            self.end_headers()
+            self.wfile.write(bytes("<form action='/post' method='POST'>", "utf-8"))
+            self.wfile.write(bytes("<input type='text' name='username'>", "utf-8"))
+            self.wfile.write(bytes("<input type='submit' name='senden'>", "utf-8"))
+            self.wfile.write(bytes("</form>", "utf-8"))
+            return
 
         self.send_response(200)
         self.send_header("Content-type", "text/html")
