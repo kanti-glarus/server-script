@@ -6,7 +6,13 @@ GET-Parameter:
 
     https://192.168.1.xx:8080?name=kanti-glarus
 
-    todo: POST-Parameter einfügen
+POST-Parameter (im HTTP Header):
+
+    POST https://192.168.1.xx:8080 HTTP/1.0
+    User-Agent: HTTPTool/1.0
+    Content-Type: application/x-www-form-urlencoded
+    Content-Length: 32
+    name=kanti-glarus
 
 Ein fertiges Beispiel findet sich bei den [python scripts](../python): [get-post-server.py](../python/get-post-server.py).
 
